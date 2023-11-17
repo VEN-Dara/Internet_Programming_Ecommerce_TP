@@ -1,5 +1,6 @@
 <template>
     <div class="category" :style="{backgroundColor: color}">
+        <!-- <img :src="`${image}`" alt="Logo" style="width: 120px; height: 120px;"> -->
         <img :src="image" alt="Logo" style="width: 120px; height: 120px;">
         <strong>{{ name }}</strong>
         <span>{{ quantity }} items</span>
