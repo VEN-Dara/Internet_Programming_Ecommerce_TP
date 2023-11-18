@@ -63,7 +63,7 @@ export default {
           id: 1,
           title: "Everyday Fresh & Clean with Our Products",
           color: "#F0E8D5",
-          image: "../assets/images/Cat-01 1.png",
+          image: "../assets/images/Cms-04 1.png",
         },
         {
           id: 2,

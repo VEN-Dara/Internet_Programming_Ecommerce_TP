@@ -2,7 +2,7 @@
     <div class="product">
         <div class="tag">{{ tag }}</div>
         <div class="cover">
-            <img :src=image alt="">
+            <img :src=getImageUrl(image) alt="">
         </div>
         <div class="info">
             <p class="category">{{category}}</p>
@@ -46,7 +46,12 @@ export default {
     components: {
     Star,
     shallowReactive
-}
+    },
+    methods: {
+            getImageUrl(image) {
+                return new URL(image, import.meta.url)
+            }
+    }
 }
 
 </script>

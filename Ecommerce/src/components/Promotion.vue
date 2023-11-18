@@ -1,6 +1,6 @@
 <template>
     <div class="promotion" :style="{backgroundColor: color}">
-        <img :src=image alt="logo">
+        <img :src=getImageUrl(image) alt="logo">
         <div>
             <p>{{ title }}</p>
             <button>
@@ -25,7 +25,12 @@
 <script>
     export default {
         name: 'Promotion',
-        props: ['title', 'color', 'image']
+        props: ['title', 'color', 'image'],
+        methods: {
+            getImageUrl(image) {
+                return new URL(image, import.meta.url)
+            }
+        }
     }
 
 </script>
