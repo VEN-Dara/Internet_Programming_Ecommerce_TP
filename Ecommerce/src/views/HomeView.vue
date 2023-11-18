@@ -47,8 +47,8 @@ import Category from '../components/Category.vue';
 import Product from '../components/Product.vue';
 import Promotion from '../components/Promotion.vue';
 
-
 export default {
+
   name: "HomeVue",
   components: {
     Category,
@@ -63,19 +63,19 @@ export default {
           id: 1,
           title: "Everyday Fresh & Clean with Our Products",
           color: "#F0E8D5",
-          image: "/src/assets/images/Cms-04 1.png",
+          image: "../assets/images/Cat-01 1.png",
         },
         {
           id: 2,
           title: "Make your Breakfast Healthy and Easy",
           color: "#F3E8E8",
-          image: "/src/assets/images/Cat-01 1.png",
+          image: "../assets/images/Cat-01 1.png",
         },
         {
           id: 3,
           title: "The best Organic Products Online",
           color: "#E7EAF3",
-          image: "/src/assets/images/Cms-03 1.png",
+          image: "../assets/images/Cms-03 1.png",
         },
       ],
       categories: [
@@ -84,77 +84,77 @@ export default {
           group: "Milks & Diaries",
           name: "Coke & Milk",
           color: "#F2FCE4",
-          image: "/src/assets/images/Hamberger.png"
+          image: "../assets/images/Hamberger.png"
         },
         {
           id: 2,
           group: "Fruits",
           name: "Peach",
           color: "#FFFCEB",
-          image: "/src/assets/images/Peach.png"
+          image: "../assets/images/Peach.png"
         },
         {
           id: 3,
           group: "Fruits",
           name: "Organic Kiwi",
           color: "#ECFFEC",
-          image: "/src/assets/images/Kiwi.png"
+          image: "../assets/images/Kiwi.png"
         },
         {
           id: 4,
           group: "Fruits",
           name: "Red Apple",
           color: "#FEEFEA",
-          image: "/src/assets/images/RedApple.png"
+          image: "../assets/images/RedApple.png"
         },
         {
           id: 5,
           group: "Coffees & Teas",
           name: "Snack",
           color: "#FFF3EB",
-          image: "/src/assets/images/Snack.png"
+          image: "../assets/images/Snack.png"
         },
         {
           id: 5,
           group: "Coffees & Teas",
           name: "Black plum",
           color: "#FFF3FF",
-          image: "/src/assets/images/BlackPlum.png"
+          image: "../assets/images/BlackPlum.png"
         },
         {
           id: 5,
           group: "Coffees & Teas",
           name: "Vegetables",
           color: "#F2FCE4",
-          image: "/src/assets/images/Vegetable.png"
+          image: "../assets/images/Vegetable.png"
         },
         {
           id: 5,
           group: "Coffees & Teas",
           name: "Headphone",
           color: "#FFFCEB",
-          image: "/src/assets/images/Headphone.png"
+          image: "../assets/images/Headphone.png"
         },
         {
           id: 5,
           group: "Coffees & Teas",
           name: "Sweet",
           color: "#F2FCE4",
-          image: "/src/assets/images/Sweet.png"
+          image: "../assets/images/Sweet.png"
         },
         {
           id: 5,
           group: "Coffees & Teas",
           name: "Orange",
           color: "#FFF3FF",
-          image: "/src/assets/images/Orange.png"
+          image: "../assets/images/Orange.png"
         },
       ],
       products: [
         {
           id: 1,
           tag: "-17%",
-          image: "/src/assets/images/1 902.png",
+          image: "../assets/images/1 902.png",
           category: "Coffees & Teas",
           name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
           rate: 3,
@@ -166,7 +166,7 @@ export default {
         {
           id: 1,
           tag: "-32%",
-          image: "/src/assets/images/3 389454.png",
+          image: "../assets/images/3 389454.png",
           category: "Coffees & Teas",
           name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
           rate: 4,
@@ -178,7 +178,7 @@ export default {
         {
           id: 1,
           tag: "-17%",
-          image: "/src/assets/images/5 7.png",
+          image: "../assets/images/5 7.png",
           category: "Coffees & Teas",
           name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
           rate: 5,
@@ -190,7 +190,7 @@ export default {
         {
           id: 1,
           tag: "-55%",
-          image: "/src/assets/images/8 1.png",
+          image: "../assets/images/8 1.png",
           category: "Coffees & Teas",
           name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
           rate: 4,
@@ -202,7 +202,7 @@ export default {
         {
           id: 1,
           tag: "-17%",
-          image: "/src/assets/images/9 1.png",
+          image: "../assets/images/9 1.png",
           category: "Coffees & Teas",
           name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
           rate: 5,
@@ -214,7 +214,7 @@ export default {
         {
           id: 1,
           tag: "-32%",
-          image: "/src/assets/images/11 1.png",
+          image: "../assets/images/11 1.png",
           category: "Coffees & Teas",
           name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
           rate: 4,
@@ -226,7 +226,7 @@ export default {
         {
           id: 1,
           tag: "-17%",
-          image: "/src/assets/images/12 1.png",
+          image: "../assets/images/12 1.png",
           category: "Coffees & Teas",
           name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
           rate: 5,
@@ -238,7 +238,7 @@ export default {
         {
           id: 1,
           tag: "-55%",
-          image: "/src/assets/images/16 1.png",
+          image: "../assets/images/16 1.png",
           category: "Coffees & Teas",
           name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
           rate: 4,
