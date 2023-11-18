@@ -13,7 +13,7 @@ export default defineConfig({
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('/Internet_Programming_Ecommerce_TP/src/', import.meta.url))
     }
   }
 })

@@ -46,6 +46,8 @@
 import Category from '../components/Category.vue';
 import Product from '../components/Product.vue';
 import Promotion from '../components/Promotion.vue';
+import image1 from "../assets/images/Peach.png";
+import image2 from "../assets/images/Hamberger.png";
 
 export default {
 
@@ -84,14 +86,14 @@ export default {
           group: "Milks & Diaries",
           name: "Coke & Milk",
           color: "#F2FCE4",
-          image: "../assets/images/Hamberger.png"
+          image: "./Vegetable.png",
         },
         {
           id: 2,
           group: "Fruits",
           name: "Peach",
           color: "#FFFCEB",
-          image: "../assets/images/Peach.png"
+          image: image1
         },
         {
           id: 3,
