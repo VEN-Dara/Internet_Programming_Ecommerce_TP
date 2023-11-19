@@ -1,6 +1,6 @@
 <template>
     <div class="promotion" :style="{backgroundColor: color}">
-        <img :src=getImageUrl(image) alt="logo">
+        <img :src=image alt="logo">
         <div>
             <p>{{ title }}</p>
             <button>

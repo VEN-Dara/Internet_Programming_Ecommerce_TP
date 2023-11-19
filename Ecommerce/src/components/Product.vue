@@ -2,7 +2,7 @@
     <div class="product">
         <div class="tag">{{ tag }}</div>
         <div class="cover">
-            <img :src=getImageUrl(image) alt="">
+            <img :src=image alt="">
         </div>
         <div class="info">
             <p class="category">{{category}}</p>
@@ -28,14 +28,13 @@
 </template>
 
 <script>
-import { shallowReactive } from 'vue';
 import Star from 'vue-material-design-icons/star.vue'
 
 export default {
     name: 'Product',
     props: {
         tag: String,
-        image: String,
+        image: URL,
         category: String,
         name: String,
         rate: Number,
@@ -44,13 +43,12 @@ export default {
         discountPrice: Number,
     },
     components: {
-    Star,
-    shallowReactive
+        Star,
     },
     methods: {
-            getImageUrl(image) {
-                return new URL(image, import.meta.url)
-            }
+        getImageUrl(image) {
+            return new URL(image, import.meta.url)
+        }
     }
 }
 
