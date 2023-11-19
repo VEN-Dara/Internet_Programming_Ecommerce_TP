@@ -23,28 +23,11 @@
         </li>
       </ul>
     </div>
-    <nav>
-      <h2>Popular Products</h2>
-      <ul>
-        <li><strong>All</strong></li>
-        <li v-for="(group, index) in groups" :key="index">
-          {{ group }}
-        </li>
-      </ul>
-    </nav>
-    <div class="products">
-      <ul>
-        <li v-for="(product, index) in products" :key="index">
-          <Product :name="product.name" :category="product.category" :image="product.image" :tag="product.tag" :sellPrice="product.sellPrice" :description="product.description" :discountPrice="product.discountPrice" :rate="product.rate"/>
-        </li>
-      </ul>
-    </div>
   </div>
 </template>
 
 <script>
 import Category from '../components/Category.vue';
-import Product from '../components/Product.vue';
 import Promotion from '../components/Promotion.vue';
 
 export default {
@@ -53,7 +36,6 @@ export default {
   components: {
     Category,
     Promotion,
-    Product,
 },
   methods: {
     getImageUrl(image) {
@@ -153,104 +135,6 @@ export default {
           name: "Orange",
           color: "#FFF3FF",
           image: new URL("../assets/images/Orange.png", import.meta.url)
-        },
-      ],
-      products: [
-        {
-          id: 1,
-          tag: "-17%",
-          image: new URL("../assets/images/1 902.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 3,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "-32%",
-          image: new URL("../assets/images/3 389454.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 4,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "-17%",
-          image: new URL("../assets/images/5 7.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 5,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "-55%",
-          image: new URL("../assets/images/8 1.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 4,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "-17%",
-          image: new URL("../assets/images/9 1.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 5,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "-32%",
-          image: new URL("../assets/images/11 1.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 4,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "-17%",
-          image: new URL("../assets/images/12 1.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 5,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "-55%",
-          image: new URL("../assets/images/16 1.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 4,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
         },
       ],
     }
