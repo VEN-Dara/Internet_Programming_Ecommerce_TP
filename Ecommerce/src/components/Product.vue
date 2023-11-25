@@ -1,6 +1,6 @@
 <template>
     <div class="product">
-        <div class="tag">{{ tag }}</div>
+        <div v-if="tag !== ''" :class="[ 'tag', tag === 'Hot' ? 'bg-[#fe2f2f]': tag === 'Sale' ? 'bg-[#ffe609]' : 'bg-[#1fff97]']" >{{ tag }}</div>
         <div class="cover">
             <img :src=image alt="">
         </div>
@@ -8,7 +8,7 @@
             <p class="category">{{category}}</p>
             <p class="name">{{ name }}</p>
             <div class="rate" style="display: flex; align-items: center;">
-                <div>
+                <div class="flex">
                     <Star v-for="(index) in rate" :key="index"  style="color: gold;"/>
                     <Star v-for="(index) in (5-rate)" :key="index"  style="color: gray;"/>
                 </div>
@@ -74,9 +74,8 @@ p {
     position: absolute;
     top: 20px;
     left: 0;
-    padding: 10px 15px;
+    padding: 8px 15px;
     border-radius: 0px 30px 30px 0px;
-    background: var(--NestMart-Brand-1, #3BB77E);
     display: inline-block;
 }
 
@@ -86,6 +85,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 .product .info {
     padding-left: 19px;

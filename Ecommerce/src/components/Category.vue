@@ -9,7 +9,6 @@
 <script>
     export default {
         name: 'Category',
-        // props: ['name', 'quantity', 'color', 'image'],
         props: {
             name: String,
             image: URL,

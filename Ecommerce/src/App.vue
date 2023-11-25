@@ -1,16 +1,25 @@
 <template>
-  <body style="display: flex; flex-direction: column">
-    <HomeView/>
+  <body>
+    <Provider>
+      <Layout/>
+      <div class="w-[1400px] m-auto flex flex-col">
+        <router-view/>
+      </div>
+    </Provider>
   </body>
 </template>
 
 <script>
-import HomeView from "./views/HomeView.vue";
+import router from "./router/index";
+import Layout from "./components/Layout.vue";
+import Provider from "./provider/Provider.vue";
 
 export default {
   name: "App",
   components: {
-    HomeView,
+    router,
+    Layout,
+    Provider,
   },
   data() {
     return {
@@ -19,10 +28,8 @@ export default {
   methods: {
   },
   mounted() {
-    // import(this.image4).then((imageModule) => {
-    //   this.image2 = imageModule.default;
-    // })
   },
+  router,
 };
 </script>
 
