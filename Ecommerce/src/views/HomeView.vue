@@ -1,17 +1,19 @@
 <template>
   <div class="home-container">
+    <br>
+    <subscribe-panel/>
     <nav>
       <h2>Featured Categories</h2>
       <ul>
         <li><strong>All</strong></li>
-        <li v-for="(group, index) in groups" :key="index">
+        <li v-for="(group, index) in data.groups" :key="index">
           {{ group }}
         </li>
       </ul>
     </nav>
     <div class="categories">
       <ul>
-        <li v-for="(category, index) in categories" :key="index">
+        <li v-for="(category, index) in data.categories" :key="index">
           <Category
             :color="category.color"
             :image="category.image"
@@ -23,8 +25,9 @@
     </div>
     <div class="promotions">
       <ul>
-        <li v-for="(promotion, index) in promotions" :key="index">
+        <li v-for="(promotion, index) in data.promotions" :key="index">
           <promotion
+            :id="promotion.id"
             :title="promotion.title"
             :color="promotion.color"
             :image="promotion.image"
@@ -36,15 +39,16 @@
       <h2>Popular Products</h2>
       <ul>
         <li><strong>All</strong></li>
-        <li v-for="(group, index) in groups" :key="index">
+        <li v-for="(group, index) in data.groups" :key="index">
           {{ group }}
         </li>
       </ul>
     </nav>
     <div class="products">
       <ul>
-        <li v-for="(product, index) in products" :key="index">
+        <li v-for="(product, index) in data.products" :key="index">
           <Product
+            :id="product.id"
             :name="product.name"
             :category="product.category"
             :image="product.image"
@@ -64,6 +68,7 @@
 import Product from "../components/Product.vue";
 import Promotion from "../components/Promotion.vue";
 import Category from "../components/Category.vue";
+import SubscribePanel from '../components/SubscribePanel.vue';
 
 export default {
   name: "HomeVue",
@@ -71,214 +76,14 @@ export default {
     Category,
     Promotion,
     Product,
+    SubscribePanel,
   },
+  inject: ['data'],
   methods: {
     getImageUrl(image) {
       return new URL(image, import.meta.url);
     },
   },
-  data() {
-    return {
-      groups: [
-        "Milks & Diaries",
-        "Coffees & Teas",
-        "Pet Foods",
-        "Meats",
-        "Vegetables",
-        "Fruits",
-      ],
-      promotions: [
-        {
-          id: 1,
-          title: "Everyday Fresh & Clean with Our Products",
-          color: "#F0E8D5",
-          image: new URL("../assets/images/Cms-04 1.png", import.meta.url),
-        },
-        {
-          id: 2,
-          title: "Make your Breakfast Healthy and Easy",
-          color: "#F3E8E8",
-          image: new URL("../assets/images/Cat-01 1.png", import.meta.url),
-        },
-        {
-          id: 3,
-          title: "The best Organic Products Online",
-          color: "#E7EAF3",
-          image: new URL("../assets/images/Cms-03 1.png", import.meta.url),
-        },
-      ],
-      categories: [
-        {
-          id: 1,
-          group: "Milks & Diaries",
-          name: "Coke & Milk",
-          color: "#F2FCE4",
-          image: new URL("../assets/images/Hamberger.png", import.meta.url),
-        },
-        {
-          id: 2,
-          group: "Fruits",
-          name: "Peach",
-          color: "#FFFCEB",
-          image: new URL("../assets/images/Peach.png", import.meta.url),
-        },
-        {
-          id: 3,
-          group: "Fruits",
-          name: "Organic Kiwi",
-          color: "#ECFFEC",
-          image: new URL("../assets/images/Kiwi.png", import.meta.url),
-        },
-        {
-          id: 4,
-          group: "Fruits",
-          name: "Red Apple",
-          color: "#FEEFEA",
-          image: new URL("../assets/images/RedApple.png", import.meta.url),
-        },
-        {
-          id: 5,
-          group: "Coffees & Teas",
-          name: "Snack",
-          color: "#FFF3EB",
-          image: new URL("../assets/images/Snack.png", import.meta.url),
-        },
-        {
-          id: 5,
-          group: "Coffees & Teas",
-          name: "Black plum",
-          color: "#FFF3FF",
-          image: new URL("../assets/images/BlackPlum.png", import.meta.url),
-        },
-        {
-          id: 5,
-          group: "Coffees & Teas",
-          name: "Vegetables",
-          color: "#F2FCE4",
-          image: new URL("../assets/images/Vegetable.png", import.meta.url),
-        },
-        {
-          id: 5,
-          group: "Coffees & Teas",
-          name: "Headphone",
-          color: "#FFFCEB",
-          image: new URL("../assets/images/Headphone.png", import.meta.url),
-        },
-        {
-          id: 5,
-          group: "Coffees & Teas",
-          name: "Sweet",
-          color: "#F2FCE4",
-          image: new URL("../assets/images/Sweet.png", import.meta.url),
-        },
-        {
-          id: 5,
-          group: "Coffees & Teas",
-          name: "Orange",
-          color: "#FFF3FF",
-          image: new URL("../assets/images/Orange.png", import.meta.url),
-        },
-      ],
-      products: [
-        {
-          id: 1,
-          tag: "Hot",
-          image: new URL("../assets/images/1 902.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 3,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "Sale",
-          image: new URL("../assets/images/3 389454.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 4,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "-17%",
-          image: new URL("../assets/images/5 7.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 5,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "-55%",
-          image: new URL("../assets/images/8 1.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 4,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "",
-          image: new URL("../assets/images/9 1.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 5,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "",
-          image: new URL("../assets/images/11 1.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 4,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "",
-          image: new URL("../assets/images/12 1.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 5,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-        {
-          id: 1,
-          tag: "",
-          image: new URL("../assets/images/16 1.png", import.meta.url),
-          category: "Coffees & Teas",
-          name: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
-          rate: 4,
-          description: "500 gram",
-          sellPrice: 300,
-          discountPercentage: 17,
-          discountPrice: 150,
-        },
-      ],
-    };
-  }, // End Data
 };
 </script>
 

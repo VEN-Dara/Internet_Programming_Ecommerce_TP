@@ -36,13 +36,17 @@
       <hr>
       <div class="flex my-3 items-center justify-between w-[1400px] m-auto">
         <div class="flex gap-9">
-          <button class="bg-[#3BB77E] px-4 py-3 flex items-center gap-1 rounded-md font-bold text-white">
+          <div class="bg-[#3BB77E] px-4 py-3 flex items-center gap-1 rounded-md font-bold text-white">
             <Icon icon="material-symbols-light:border-all-rounded"/>
-            <select class="bg-[#3BB77E] focus:outline-none rounded-none">
-              <option value="all">Browse All Categories</option>
-              <option v-for="(category, index) in data.categories" :key="index" :value="category.id"> {{ category.name }}</option>
+            <select 
+              class="bg-transparent focus:outline-none rounded-none"
+              v-model="browseCategoryID"
+              @change="toCategory()"
+            >
+              <option value="" class="bg-white text-black">Browse All Categories</option>
+              <option class="bg-white text-black" v-for="(category, index) in data.categories" :key="index" :value="category.id"> {{ category.name }}</option>
             </select>
-          </button>
+          </div>
           <router-link to="hot_deals" class="flex items-center">
             <Icon icon="mdi:fire" class="text-[#3BB77E] text-xl"/>
             <span class="font-bold">Hot Deals</span>
@@ -94,7 +98,32 @@ export default {
     SearchBox,
     Icon,
   },
-  inject: ['data']
+  inject: ['data'],
+  data() {
+    return {
+      browseCategoryID: '', 
+    }
+  },
+  watch: {
+    $route(to, from) {
+      if (to.params.categoryID !== from.params.categoryID) {
+          this.browseCategoryID = to.params.categoryID || '';
+      }
+    }
+
+  },
+  methods: {
+    toCategory() {
+      console.log(this.browseCategoryID === '')
+      if (this.browseCategoryID === '') {
+        this.$router.push('/');
+      }
+      else {
+        this.$router.push('/categories/' + this.browseCategoryID);
+      }
+      
+    }
+  }
 };
 </script>
 
