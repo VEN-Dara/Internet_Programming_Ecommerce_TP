@@ -14,19 +14,19 @@
         <search-box/>
       </div>
       <nav class="flex items-center">
-        <router-link to="account" class="flex">
+        <router-link to="/account" class="flex">
           <Icon icon="material-symbols:person-outline-rounded" class="text-[24px]"/>
           <span >Account</span>
         </router-link>
-        <router-link to="compare" class="flex ml-5">
+        <router-link to="/compare" class="flex ml-5">
           <Icon icon="fluent:branch-compare-24-regular" class="text-[24px]"/>
           <span >Campare</span>
         </router-link>
-        <router-link to="wishlist" class="flex ml-5">
+        <router-link to="/wishlist" class="flex ml-5">
           <Icon icon="material-symbols:favorite-outline-rounded" class="text-[24px]"/>
           <span >Wishlist</span>
         </router-link>
-        <router-link to="cart" class="flex ml-5">
+        <router-link to="/cart" class="flex ml-5">
           <Icon icon="material-symbols:shopping-cart-outline-rounded" class="text-[24px]"/>
           <span >Cart</span>
         </router-link>
@@ -47,31 +47,31 @@
               <option class="bg-white text-black" v-for="(category, index) in data.categories" :key="index" :value="category.id"> {{ category.name }}</option>
             </select>
           </div>
-          <router-link to="hot_deals" class="flex items-center">
+          <router-link to="/hot_deals" class="flex items-center">
             <Icon icon="mdi:fire" class="text-[#3BB77E] text-xl"/>
             <span class="font-bold">Hot Deals</span>
           </router-link>
           <ul class="flex items-center gap-5 font-bold capitalize">
             <li>
-              <router-link to="home">home</router-link>
+              <router-link to="/home">home</router-link>
             </li>
             <li>
-              <router-link to="food">food</router-link>
+              <router-link to="/food">food</router-link>
             </li>
             <li>
-              <router-link to="vegetables">vegetables</router-link>
+              <router-link to="/vegetables">vegetables</router-link>
             </li>
             <li>
-              <router-link to="drink">drink</router-link>
+              <router-link to="/drink">drink</router-link>
             </li>
             <li>
-              <router-link to="cookies">cookies</router-link>
+              <router-link to="/cookies">cookies</router-link>
             </li>
             <li>
-              <router-link to="meat_&_seafood">Meat & Seafood</router-link>
+              <router-link to="/meat_&_seafood">Meat & Seafood</router-link>
             </li>
             <li>
-              <router-link to="bekery">bekery</router-link>
+              <router-link to="/bekery">bekery</router-link>
             </li>
           </ul>
         </div>

@@ -1,6 +1,6 @@
 <template>
     <router-link :to="`products/${id}`">
-        <div class="product">
+        <div class="product hover:shadow-lg">
             <div v-if="tag !== ''" :class="[ 'tag', tag === 'Hot' ? 'bg-[#fe2f2f]': tag === 'Sale' ? 'bg-[#ffe609]' : 'bg-[#1fff97]']" >{{ tag }}</div>
             <div class="cover">
                 <img :src=image alt="">
@@ -70,7 +70,6 @@ p {
     border-radius: 10px;
     border: 1px solid #BCE3C9;
     background: #FFF;
-    box-shadow: 20px 20px 40px 0px rgba(24, 24, 24, 0.07);
 }
 
 .product .tag {
