@@ -1,29 +1,31 @@
 <template>
-    <div class="product">
-        <div class="tag">{{ tag }}</div>
-        <div class="cover">
-            <img :src=image alt="">
-        </div>
-        <div class="info">
-            <p class="category">{{category}}</p>
-            <p class="name">{{ name }}</p>
-            <div class="rate" style="display: flex; align-items: center;">
-                <div>
-                    <Star v-for="(index) in rate" :key="index"  style="color: gold;"/>
-                    <Star v-for="(index) in (5-rate)" :key="index"  style="color: gray;"/>
-                </div>
-                <span style="margin-left: 10px; margin-bottom: 4px;">({{rate}})</span>
+    <router-link :to="`products/${id}`">
+        <div class="product hover:shadow-lg">
+            <div v-if="tag !== ''" :class="[ 'tag', tag === 'Hot' ? 'bg-[#fe2f2f]': tag === 'Sale' ? 'bg-[#ffe609]' : 'bg-[#1fff97]']" >{{ tag }}</div>
+            <div class="cover">
+                <img :src=image alt="">
             </div>
-            <p class="description">{{description}}</p>
-            <div class="buy-box">
-                <div>
-                    <span class="discount">${{discountPrice}}</span>
-                    <span class="price">${{sellPrice}}</span>
+            <div class="info">
+                <p class="category">{{category}}</p>
+                <p class="name">{{ name }}</p>
+                <div class="rate" style="display: flex; align-items: center;">
+                    <div class="flex">
+                        <Star v-for="(index) in rate" :key="index"  style="color: gold;"/>
+                        <Star v-for="(index) in (5-rate)" :key="index"  style="color: gray;"/>
+                    </div>
+                    <span style="margin-left: 10px; margin-bottom: 4px;">({{rate}})</span>
                 </div>
-                <input type="number" id="quantity">
+                <p class="description">{{description}}</p>
+                <div class="buy-box">
+                    <div>
+                        <span class="discount">${{discountPrice}}</span>
+                        <span class="price">${{sellPrice}}</span>
+                    </div>
+                    <input type="number" id="quantity">
+                </div>
             </div>
         </div>
-    </div>
+    </router-link>
     
 </template>
 
@@ -33,6 +35,7 @@ import Star from 'vue-material-design-icons/star.vue'
 export default {
     name: 'Product',
     props: {
+        id: Number,
         tag: String,
         image: URL,
         category: String,
@@ -67,16 +70,14 @@ p {
     border-radius: 10px;
     border: 1px solid #BCE3C9;
     background: #FFF;
-    box-shadow: 20px 20px 40px 0px rgba(24, 24, 24, 0.07);
 }
 
 .product .tag {
     position: absolute;
     top: 20px;
     left: 0;
-    padding: 10px 15px;
+    padding: 8px 15px;
     border-radius: 0px 30px 30px 0px;
-    background: var(--NestMart-Brand-1, #3BB77E);
     display: inline-block;
 }
 
@@ -86,6 +87,7 @@ p {
     display: flex;
     align-items: center;
     justify-content: center;
+    overflow: hidden;
 }
 .product .info {
     padding-left: 19px;
@@ -115,6 +117,9 @@ p {
     font-weight: 400;
     margin-top: 0;
     margin-bottom: 14px;
+    width: 100%;
+    height: 16px;
+    overflow: hidden;
 }
 
 .buy-box {
