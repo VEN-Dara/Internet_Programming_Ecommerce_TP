@@ -14,12 +14,14 @@
     <div class="categories">
       <ul>
         <li v-for="(category, index) in data.categories" :key="index">
-          <Category
-            :color="category.color"
-            :image="category.image"
-            :name="category.name"
-            quantity="12"
-          />
+          <router-link :to="`/categories/${category.id}`">
+            <Category
+              :color="category.color"
+              :image="category.image"
+              :name="category.name"
+              quantity="12"
+            />
+          </router-link>
         </li>
       </ul>
     </div>
