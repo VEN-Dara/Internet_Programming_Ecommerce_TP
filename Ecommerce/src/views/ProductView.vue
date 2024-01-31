@@ -78,8 +78,6 @@
             Star,
             Icon,
         },
-        mounted() {
-        },
         created() {
             this.productID = this.$route.params.productID
             this.product = this.data.products.find( product => product.id === parseInt(this.productID))
